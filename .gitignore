@@ -13,6 +13,9 @@ dist
 dist-ssr
 *.local
 
+# Critical CSS cache (локальный, не нужен в репозитории)
+.critical-cache/
+
 # Package manager lock files (оставь только тот, который реально используешь)
 yarn.lock
 pnpm-lock.yaml
