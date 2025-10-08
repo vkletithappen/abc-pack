@@ -1,0 +1,27 @@
+@mixin custom-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &__input {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background-color: red;
+    cursor: pointer;
+
+    &:checked::after {
+      display: block;
+      content: "";
+      // background-image: url("img/custom-checkbox.svg");
+      // background-repeat: no-repeat;
+      width: 10px;
+      height: 8px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}

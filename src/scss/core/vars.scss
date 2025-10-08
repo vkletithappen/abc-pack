@@ -1,0 +1,45 @@
+@use "@/scss/helpers" as *;
+
+:root {
+  // base
+  --ff-1: "Mulish", sans-serif;
+  --content-width: 1160px;
+  --container-offset: #{fluid-mobile(16,40)};
+  --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+
+  // colors
+  --col-white: #fff;
+  --col-white-04: rgba(255, 255, 255, 0.4);
+  --col-black: #000;
+  --col-black-04: rgba(0, 0, 0, 0.4);
+
+  --col-dark-1: #090a12;
+
+  --col-grey-dark-1: #44454b;
+
+  --col-grey-1: #a6a6a8;
+  --col-grey-2: #898d96;
+  --col-grey-3: #5f6571;
+
+  --col-grey-light-1: #f2f3f5;
+  --col-grey-light-1-05: rgba(242, 243, 245, 0.5);
+  --col-grey-light-2: #efefef;
+  --col-grey-light-3: #e3e7f0;
+  --col-grey-light-4: #f7f7f7;
+
+  --col-primary-1: #4269f5;
+  --col-primary-1-01: rgba(66, 105, 245, 0.1);
+  --col-primary-1-02: rgba(66, 105, 245, 0.2);
+  --col-primary-1-03: rgba(66, 105, 245, 0.3);
+
+  --col-primary-dark-1: #2855f6;
+
+  --col-green-1: #66dbbd;
+
+
+
+  // other
+  --anim-normal: 0.3s ease-in-out;
+  --anim-long: 0.45s ease-in-out;
+  --lh-n: 1.25;
+}

@@ -1,0 +1,71 @@
+@use "@/scss/helpers" as *;
+
+.slider-pagination {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  width: fit-content;
+}
+
+.slider-pagination-bullet {
+  position: relative;
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 1px;
+  background-color: var(--col-grey-light-3);
+  transition: background-color var(--anim-normal);
+  cursor: pointer;
+
+  &::after {
+    display: block;
+    content: '';
+    width: 16px;
+    height: 16px;
+    background-color: transparent;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+  }
+
+  @include hover {
+    background-color: var(--col-primary-1-03);
+  }
+
+  &.is-active {
+    background-color: var(--col-dark-1);
+  }
+}
+
+.slider-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  @include max-576 {
+    justify-content: space-between;
+  }
+}
+
+.slider-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background-color: var(--col-grey-light-1);
+  color: var(--col-grey-dark-1);
+  transition: color var(--anim-normal), background-color var(--anim-normal);
+
+  @include hover {
+    background-color: var(--col-primary-1-02);
+    color: var(--col-black);
+  }
+
+  &.swiper-button-disabled {
+    color: var(--col-grey-2);
+    background-color: var(--col-grey-light-1-05);
+  }
+}

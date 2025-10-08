@@ -1,0 +1,16 @@
+@use "@/scss/helpers" as *;
+
+.partners {
+  padding-top: fluid-mobile(51, 72);
+
+  &__title {
+    margin: 0;
+    margin-bottom: 24px;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.33;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--col-grey-dark-1);
+  }
+}

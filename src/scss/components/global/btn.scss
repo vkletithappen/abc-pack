@@ -1,0 +1,50 @@
+@use "@/scss/helpers" as *;
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 5px 28px;
+  min-height: 56px;
+  border-radius: 8px;
+  font-family: var(--ff-1);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--col-white);
+  background-color: var(--col-primary-1);
+  transition: background-color var(--anim-normal), color var(--anim-normal);
+  user-select: none;
+
+  @include hover {
+    background-color: var(--col-primary-dark-1);
+  }
+
+  &:active {
+    color: var(--col-black);
+  }
+
+  &--sm {
+    padding: 5px 20px;
+    min-height: 48px;
+  }
+
+  &--secondary {
+    background-color: var(--col-grey-light-1);
+    color: var(--col-grey-dark-1);
+
+    @include hover {
+      color: var(--col-primary-1);
+      background-color: var(--col-primary-1-02);
+    }
+
+    &:active {
+      color: var(--col-black);
+    }
+  }
+
+  &--black-text {
+    color: var(--col-black);
+  }
+}

@@ -1,0 +1,123 @@
+@use "@/scss/helpers" as *;
+
+.subscribe {
+  padding-top: fluid-tablet(80, 100);
+  margin-bottom: fluid(60, 99);
+
+  @include max-834 {
+    padding-top: fluid-mobile(60, 80);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: fluid-tablet(30, 40);
+
+    @include max-834 {
+      flex-direction: column;
+      align-items: stretch;
+      gap: fluid-mobile(17, 30);
+    }
+  }
+
+  &__img-wrapper {
+    flex: 1;
+    border-radius: fluid-mobile(2, 4);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: fluid-mobile(18, 23);
+  }
+
+  &__title {
+    @include max-834 {
+      font-size: 24px;
+    }
+  }
+
+  &__desc {
+    max-width: 512px;
+  }
+}
+
+.subscribe-form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: fluid-mobile(15, 29);
+
+  &__fieldset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: fluid-tablet(8, 12);
+
+    @include max-834 {
+      gap: 12px;
+    }
+
+    @include max-576 {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+
+  &__field {
+    width: 100%;
+  }
+
+  &__input {
+    padding: 0 20px;
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    background-color: var(--col-grey-light-1);
+
+    &::placeholder {
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.625;
+      color: var(--col-grey-2);
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  &__checkbox {
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+  }
+
+  &__checkbox-content {
+    flex: 1;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.57;
+    color: var(--col-grey-dark-1);
+
+    a {
+      padding-left: 3px;
+      color: var(--col-primary-1);
+      text-decoration: underline;
+      transition: color var(--anim-normal);
+
+      @include hover {
+        color: var(--col-black);
+      }
+    }
+  }
+}

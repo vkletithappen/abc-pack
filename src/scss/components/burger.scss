@@ -1,0 +1,67 @@
+@use "@/scss/helpers" as *;
+
+.burger {
+  --burger-width: 18px;
+  --burger-line-height: 2px;
+  --burger-gap: 5.5px;
+
+  display: none;
+  position: relative;
+  margin-right: 3px;
+  z-index: 10;
+  width: var(--burger-width);
+  height: calc(var(--burger-line-height) * 3 + var(--burger-gap) * 2);
+  color: var(--col-black);
+  background-color: transparent;
+
+  @include max-834 {
+    display: block;
+  }
+
+  &__line {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: var(--burger-line-height);
+    border-radius: 30px;
+    background-color: currentColor;
+    transition: all var(--anim-normal);
+    transform-origin: center;
+
+    &:first-child {
+      translate: 0 calc(-50% - var(--burger-gap) - var(--burger-line-height));
+    }
+
+    &:nth-child(2) {
+      translate: 0 -50%;
+    }
+
+    &:last-child {
+      translate: 0 calc(-50% + var(--burger-gap) + var(--burger-line-height));
+    }
+  }
+
+  &.is-active {
+    .burger__line {
+
+      &:first-child {
+        translate: 0 -50%;
+        rotate: 45deg;
+        scale: 1.1;
+      }
+
+      &:nth-child(2) {
+        translate: 15px 0;
+        opacity: 0;
+        width: 0;
+      }
+
+      &:last-child {
+        translate: 0 -50%;
+        rotate: -45deg;
+        scale: 1.1;
+      }
+    }
+  }
+}

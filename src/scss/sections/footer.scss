@@ -1,0 +1,127 @@
+@use "@/scss/helpers" as *;
+
+.footer {
+  padding-bottom: fluid(20, 40);
+
+  &__mid {
+    padding-top: fluid(20, 41);
+  }
+
+  &__copyright {
+    padding-top: fluid(20, 44);
+    margin: 0;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--col-grey-2);
+  }
+}
+
+.top-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: fluid(20, 40);
+  padding-bottom: fluid(20, 40);
+  border-top: 1px solid var(--col-grey-light-2);
+  border-bottom: 1px solid var(--col-grey-light-2);
+
+  &__title {
+    margin: 0;
+    margin-bottom: 8px;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 1.417;
+    color: var(--col-dark-1);
+  }
+
+  &__desc {
+    margin: 0;
+    margin-bottom: 44px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.625;
+    color: var(--col-grey-2);
+  }
+
+  &__contacts-block {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
+  }
+}
+
+.top-footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  &__phone {
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--col-dark-1);
+  }
+
+  &__email {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--col-dark-1);
+  }
+
+  &__address {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--col-dark-1);
+  }
+}
+
+.mid-footer {
+  padding-bottom: fluid(20, 43);
+  border-bottom: 1px solid var(--col-grey-light-2);
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 40px fluid(20, 40, 576, 1024);
+
+    @include max-576 {
+      column-gap: 0;
+    }
+  }
+
+  &__item {
+    grid-column: span 3;
+    display: flex;
+    flex-direction: column;
+    gap: 29px;
+
+    @include max-1024 {
+      grid-column: span 6;
+    }
+
+    @include max-576 {
+      grid-column: span 12;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--col-grey-2);
+  }
+
+  &__sublist {
+    display: flex;
+    flex-direction: column;
+    gap: 31.5px;
+  }
+
+  &__sublink {
+    font-weight: 400;
+    font-size: 16px;
+    color: var(--col-dark-1);
+  }
+}

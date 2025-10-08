@@ -1,0 +1,66 @@
+@use "@/scss/helpers" as *;
+
+.section-title {
+  display: block;
+  margin: 0;
+  max-width: 561px;
+  font-weight: 800;
+  font-size: fluid-tablet(28, 32);
+  line-height: 1.375;
+  color: var(--col-dark-1);
+
+  @include max-1024 {
+    line-height: 1.285;
+  }
+
+  @include max-834 {
+    font-size: fluid-mobile(24, 28);
+    line-height: 1.417;
+  }
+
+  &--sm {
+    margin: 0;
+    font-weight: 800;
+    font-size: fluid-tablet(24, 28);
+    line-height: 1.286;
+    color: var(--col-dark-1);
+
+    @include max-1024 {
+      line-height: 1.417;
+    }
+
+    @include max-834 {
+      font-size: fluid-mobile(20, 24);
+      line-height: 1.7;
+    }
+  }
+
+  &--center {
+    text-align: center;
+  }
+
+  &--white {
+    color: var(--col-white);
+  }
+}
+
+.section-main-desc {
+  display: block;
+  margin: 0;
+  font-weight: 400;
+  font-size: fluid-tablet(16, 20);
+  line-height: 1.6;
+  color: var(--col-grey-dark-1);
+}
+
+.section-text {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.625;
+  color: var(--col-grey-dark-1);
+
+  &--white {
+    color: var(--col-white);
+  }
+}

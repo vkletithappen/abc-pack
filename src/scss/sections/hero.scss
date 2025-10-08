@@ -1,0 +1,116 @@
+@use "@/scss/helpers" as *;
+
+.hero {
+  padding-top: fluid-tablet(44, 63);
+  overflow: hidden;
+
+  @include max-834 {
+    padding-top: 89px;
+  }
+
+  &__container {
+    display: flex;
+    gap: fluid-tablet(34, 40);
+    padding-left: max(var(--container-offset), calc((100% - var(--content-width)) / 2));
+
+    @include max-834 {
+      flex-direction: column;
+      gap: 40px;
+    }
+  }
+
+  &__content {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: fluid-tablet(9, 53);
+    max-width: fluid-tablet(387, 519);
+
+    @include max-834 {
+      padding-top: 0;
+      padding-right: 20px;
+      max-width: 100%;
+    }
+  }
+
+  &__title-desc {
+    margin-bottom: fluid-tablet(34, 40);
+    font-weight: 700;
+    font-size: fluid-tablet(14, 16);
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--col-primary-1);
+
+    @include max-834 {
+      margin-bottom: fluid-mobile(31, 34);
+      font-size: fluid-mobile(12, 14);
+      line-height: 1.66;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 25px;
+    font-weight: 800;
+    font-size: fluid-tablet(30, 40);
+    line-height: 1.2;
+    color: var(--col-dark-1);
+
+    @include max-1024 {
+      line-height: 1.46;
+    }
+
+    @include max-834 {
+      font-size: fluid-mobile(24, 30);
+      line-height: 1.42;
+    }
+  }
+
+  &__desc {
+    margin-bottom: fluid-tablet(32, 39);
+  }
+
+  &__btns {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__primary-btn {
+    padding: 5px 32px;
+  }
+
+  &__secondary-btn {
+    padding: 5px 28px;
+
+    @include max-576 {
+      display: none;
+    }
+  }
+
+  &__slider-pagination {
+    padding-top: fluid-tablet(14, 24);
+    padding-bottom: 10px;
+
+    @include max-834 {
+      padding-top: 16.5px;
+    }
+  }
+}
+
+.slider-hero {
+  max-width: 100%;
+
+  flex-shrink: 0;
+  flex-grow: 1;
+
+  &__slide {
+    width: fluid-tablet(520, 692);
+
+    @include max-834 {
+      width: fluid-mobile(405, 520);
+    }
+  }
+}

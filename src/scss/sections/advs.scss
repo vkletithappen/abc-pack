@@ -1,0 +1,79 @@
+@use "@/scss/helpers" as *;
+
+.advs {
+  padding-top: fluid-tablet(66, 102);
+
+  @include max-834 {
+    padding-top: fluid-mobile(60, 66);
+  }
+
+  &__title {
+    margin-bottom: fluid-tablet(16, 37);
+
+    @include max-1024 {
+      max-width: 469px;
+    }
+  }
+
+  &__main-content {
+    display: flex;
+    align-items: flex-start;
+    gap: fluid-tablet(36, 40);
+    margin-bottom: fluid-tablet(78.5, 98.5);
+
+    @include max-834 {
+      flex-direction: column-reverse;
+      gap: fluid-mobile(18, 36);
+      margin-bottom: fluid-mobile(59, 78.5);
+    }
+  }
+
+  &__list {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__video {
+    flex: 1;
+    padding-top: 23px;
+
+    @include max-834 {
+      width: 100%;
+    }
+  }
+}
+
+.quality-block {
+  display: flex;
+  align-items: center;
+  gap: fluid-tablet(28, 40);
+
+  @include max-834 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid-mobile(21, 28);
+  }
+
+  &__img-wrapper {
+    flex: 0 0 calc(560 / 1160 * 100%);
+    border-radius: fluid-mobile(2, 4);
+    overflow: hidden;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 0 0 calc(500 / 1160 * 100%);
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: fluid-mobile(18, 24);
+
+    @include max-1024 {
+      flex: 1;
+    }
+  }
+}

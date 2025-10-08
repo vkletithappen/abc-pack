@@ -1,0 +1,63 @@
+@use "@/scss/helpers" as *;
+
+.burger-menu {
+  position: fixed;
+  overflow-y: auto;
+  right: 0;
+  z-index: 10;
+  padding: 16px;
+  padding-bottom: 60px;
+  width: 100%;
+  top: var(--header-height);
+  height: calc(100vh - var(--header-height));
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  translate: 100% 0;
+
+  background-color: var(--col-white);
+
+  transition: translate var(--anim-normal);
+
+  &.is-active {
+    translate: 0 0;
+  }
+
+  &__contacts {
+    margin-top: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+.nav-burger-menu {
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__link {
+    display: block;
+    padding: 8px 0;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--col-dark-1);
+  }
+}
+
+.burger-menu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--col-primary-1);
+}

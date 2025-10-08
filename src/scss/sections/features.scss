@@ -1,0 +1,75 @@
+@use "@/scss/helpers" as *;
+
+.features {
+  padding-top: fluid-tablet(81, 100);
+
+  @include max-834 {
+    padding-top: fluid-mobile(60, 81);
+  }
+
+  &__title {
+    margin-bottom: fluid-mobile(40, 60);
+
+    @include max-1024 {
+      max-width: 486px;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: fluid-tablet(24, 40);
+
+    @include max-834 {
+      gap: 32px;
+    }
+  }
+
+  &__item {
+    @include max-834 {
+      grid-column: span 3;
+    }
+  }
+}
+
+.item-features {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  background-image: url('@/assets/img/features-icon-1.svg');
+  background-repeat: no-repeat;
+  background-position: left top;
+  padding-top: 84px;
+
+  @include max-834 {
+    padding-top: 13px;
+    gap: 29px;
+  }
+
+  &--efficiency {
+    background-image: url('@/assets/img/features-icon-2.svg');
+  }
+
+  &--team {
+    background-image: url('@/assets/img/features-icon-3.svg');
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.417;
+    color: var(--col-dark-1);
+
+    @include max-834 {
+      padding-left: 76px;
+    }
+  }
+
+  &__text {
+    transition: translate var(--anim-normal);
+  }
+}

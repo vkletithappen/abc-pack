@@ -1,0 +1,76 @@
+@use "@/scss/helpers" as *;
+
+.tabs {
+
+  &__tablist {
+    display: flex;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    @include max-834 {
+      &::before {
+        content: "";
+        flex: 0 0 1px;
+        height: 1px;
+        margin-right: calc(var(--container-offset) - 12px);
+      }
+
+      &::after {
+        content: "";
+        flex: 0 0 1px;
+        height: 1px;
+        margin-left: calc(var(--container-offset) - 12px);
+      }
+    }
+  }
+
+  &__btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 5px 20px;
+    min-height: 50px;
+    border-radius: 8px;
+    font-weight: 400;
+    font-size: 16px;
+    background-color: var(--col-grey-light-1);
+    color: var(--col-grey-dark-1);
+
+    transition: color var(--anim-normal), background-color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-black);
+      background-color: var(--col-primary-1-01);
+    }
+
+    &.is-active {
+      color: var(--col-white);
+      background-color: var(--col-black);
+      pointer-events: none;
+    }
+
+  }
+
+  &-content {
+    display: none;
+    opacity: 0;
+    transition: opacity 5s ease;
+
+    &.is-active {
+      display: block;
+      opacity: 1;
+    }
+  }
+}

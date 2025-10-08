@@ -1,0 +1,72 @@
+@use "@/scss/helpers" as *;
+
+.nav {
+  --indicator-left: 0;
+  --indicator-width: 0;
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: var(--indicator-left);
+    bottom: -1px;
+    width: var(--indicator-width);
+    height: 1px;
+    background-color: var(--col-primary-1);
+    transition: 0.5s 0.05s;
+    border-radius: 4px;
+
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  &__item {
+    &:first-child {
+      .nav__link {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      .nav__link {
+        padding-right: 0;
+      }
+    }
+  }
+
+  &__link {
+    padding: 0 fluid-tablet(14.725, 29.85);
+    padding-bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--col-dark-1);
+    transition: color var(--anim-normal);
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--col-primary-1);
+      border-radius: 10px;
+      outline-offset: 3px;
+    }
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+
+    &:active {
+      color: var(--col-green-1);
+    }
+  }
+}

@@ -1,0 +1,113 @@
+@use "@/scss/helpers" as *;
+
+.cases-banner {
+
+  &__wrapper {
+    border-radius: 4px;
+    background-color: var(--col-green-1);
+  }
+
+  &__container {
+    padding: fluid-tablet(86, 100) fluid-tablet(40, 60);
+
+    position: relative;
+    overflow: hidden;
+
+    transition: box-shadow var(--anim-normal);
+    cursor: pointer;
+
+    @include max-834 {
+      padding: fluid-mobile(36, 86) fluid-mobile(24, 40);
+      padding-bottom: 265.5px;
+    }
+
+    &::before {
+      display: block;
+      content: '';
+      width: 460px;
+      height: 460px;
+      background-image: url('@/assets/img/cases-banner-decor.svg');
+      background-size: cover;
+      position: absolute;
+      right: 100px;
+      top: 53%;
+      translate: 0 -50%;
+      animation: casesScale 20s linear infinite;
+      pointer-events: none;
+    }
+
+    &::after {
+      display: block;
+      content: '';
+      width: 643px;
+      height: 551px;
+      background-image: url('@/assets/img/cases-banner-products.avif');
+      background-size: cover;
+      position: absolute;
+      right: -13px;
+      top: -27%;
+      animation: casesProducts 20s linear infinite;
+      pointer-events: none;
+
+      @include max-1200 {
+        right: -56px;
+      }
+
+      @include max-1024 {
+        width: 411px;
+        height: 255px;
+        background-image: url('@/assets/img/cases-banner-products-mobile.avif');
+        background-size: cover;
+        right: 0;
+        top: auto;
+        bottom: 0;
+        animation: none
+      }
+
+      @include max-834 {
+        width: fluid-mobile(270, 411);
+        height: fluid-mobile(169, 255);
+        right: auto;
+        left: 50%;
+        translate: -50% 0;
+      }
+    }
+
+    @include hover {
+      box-shadow: 0 12px 30px rgba(102, 219, 189, 0.4);
+
+      .cases-banner__link {
+        translate: 10px 0;
+        gap: 15px;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: fluid-tablet(23, 24);
+    max-width: fluid-tablet(330, 500);
+  }
+
+  &__title {
+    font-size: fluid-mobile(24, 28);
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    color: var(--col-white);
+    transition: translate var(--anim-normal), gap var(--anim-normal);
+
+    &::after {
+      position: absolute;
+      content: '';
+      inset: 0;
+    }
+  }
+}

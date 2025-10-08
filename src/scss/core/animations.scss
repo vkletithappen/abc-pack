@@ -1,0 +1,115 @@
+@use "@/scss/helpers" as *;
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes openDialog {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes closeDialog {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-100px);
+  }
+}
+
+@keyframes casesScale {
+  0% {
+    scale: 1.5;
+  }
+
+  25% {
+    scale: 2;
+  }
+
+  50% {
+    scale: 1.5;
+  }
+
+  75% {
+    scale: 1.2;
+  }
+
+  100% {
+    scale: 1.5;
+  }
+}
+
+@keyframes casesProducts {
+  0% {
+    rotate: 0;
+    translate: 0 0;
+  }
+
+  25% {
+    rotate: 8deg;
+    translate: 0 -20px;
+  }
+
+  50% {
+    rotate: -3deg;
+    translate: 0 -30px;
+  }
+
+  60% {
+    rotate: 3deg;
+    translate: 0 20px;
+  }
+
+  75% {
+    rotate: -7deg;
+    translate: 0 30px;
+  }
+
+  100% {
+    rotate: 0;
+    translate: 0 0;
+  }
+}
+
+
+
+@keyframes pulse-scale {
+
+  0%,
+  100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}

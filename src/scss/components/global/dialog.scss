@@ -1,0 +1,76 @@
+@use "@/scss/helpers" as *;
+
+.dialog {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  border-radius: 30px;
+  background-color: transparent;
+
+  transition:
+    display 0.4s allow-discrete,
+    overlay 0.4s allow-discrete;
+  opacity: 0;
+  transform: scale(0.95);
+  animation: closeDialog 0.4s forwards;
+
+  @include max-576 {
+    max-width: 100%;
+    margin: 0;
+    margin-top: auto;
+    border-radius: 15px 15px 0 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &[open] {
+    animation: openDialog 0.4s ease forwards;
+  }
+
+  &__inner {
+    display: flex;
+    width: 100%;
+    border-radius: 30px;
+
+    background-color: transparent;
+
+    // &--video {
+    //   padding: 0;
+    // }
+  }
+
+  &__close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fluid(24, 36);
+    height: fluid(24, 36);
+    position: absolute;
+    right: 24px;
+    top: 24px;
+    color: var(--col-black);
+    transition: color var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+  }
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease, background-color 0.4s ease;
+  z-index: 1000;
+
+  &.is-active {
+    background-color: var(--col-black-04);
+    pointer-events: auto;
+    opacity: 1;
+  }
+}

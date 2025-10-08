@@ -1,0 +1,103 @@
+@use "@/scss/helpers" as *;
+
+.accordion {
+  border-bottom: 1px solid var(--col-grey-light-2);
+
+  &__control {
+    padding: 24px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    color: var(--col-dark-1);
+    transition: padding var(--anim-normal);
+
+    @include hover {
+      color: var(--col-primary-1);
+    }
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.4;
+    color: currentColor;
+    text-align: left;
+    transition: color var(--anim-normal);
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    position: relative;
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    background-color: var(--col-grey-light-1);
+    transition: background-color var(--anim-normal);
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      translate: -50% -50%;
+      width: 20px;
+      height: 20px;
+      background-image: url('@/assets/img/accordion-icon.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: rotate var(--anim-normal);
+    }
+
+    @include hover {
+      background-color: var(--col-primary-1-01);
+    }
+  }
+
+  &__content {
+    box-sizing: content-box;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    will-change: max-height;
+    transition:
+      max-height 0.45s ease-in-out,
+      opacity var(--anim-normal);
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    padding-top: 7px;
+    padding-left: 12px;
+    padding-right: fluid-mobile(14, 42);
+    padding-bottom: fluid-mobile(22, 24);
+
+    @include max-834 {
+      padding-top: 0;
+    }
+  }
+
+  &.open {
+    .accordion__control {
+      color: var(--col-black);
+
+      @include max-834 {
+        padding-bottom: 20px;
+      }
+    }
+
+    .accordion__icon::after {
+      rotate: 180deg;
+    }
+
+    .accordion__content {
+      opacity: 1;
+    }
+  }
+}

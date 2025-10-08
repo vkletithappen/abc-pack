@@ -1,0 +1,52 @@
+@use "@/scss/helpers" as *;
+
+.page {
+  height: 100%;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    min-width: 320px;
+    min-height: 100%;
+    overflow: auto;
+    font-family: var(--ff-1, sans-serif);
+    background-color: var(--col-white);
+    -webkit-text-size-adjust: 100%;
+  }
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding: 0 var(--container-offset);
+  max-width: var(--container-width);
+}
+
+.link {
+  transition: color var(--anim-normal);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--col-primary-1);
+    border-radius: 10px;
+    outline-offset: 3px;
+  }
+
+  @include hover {
+    color: var(--col-primary-1);
+  }
+
+  &:active {
+    color: var(--col-green-1);
+  }
+}
