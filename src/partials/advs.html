@@ -49,7 +49,10 @@
       <div class="advs__video">
         <div class="video-block" data-js-video-wrapper data-id="1">
           <div class="video-block__img-wrapper">
-            <img class="video-block__img" src="src/assets/img/video-preview.avif" alt="Превью для видео" width="560" height="372" loading="lazy">
+            <picture>
+              <source srcset="src/assets/img/video-preview-mobile.avif" media="(max-width: 450px)">
+              <img class="video-block__img" src="src/assets/img/video-preview.avif" alt="Превью для видео" width="560" height="372" loading="lazy">
+            </picture>
           </div>
           <button class="btn-reset video-block__btn" aria-label="Запустить видео" data-js-video-btn data-id="1" data-src="https://www.youtube.com/embed/abcd1234?autoplay=1" data-title="Видео 1">
             <svg class="video-block__icon" width="32" height="34" viewBox="0 0 32 34" fill="currentColor" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -61,7 +64,10 @@
     </div>
     <div class="advs__quality-block quality-block">
       <div class="quality-block__img-wrapper">
-        <img src="src/assets/img/quality-block-img.avif" alt="Образцы продукции" width="560" height="360" loading="lazy">
+        <picture>
+          <source srcset="src/assets/img/quality-block-img-mobile.avif" media="(max-width: 450px)">
+          <img src="src/assets/img/quality-block-img.avif" alt="Образцы продукции" width="560" height="360" loading="lazy">
+        </picture>
       </div>
       <div class="quality-block__content">
         <h3 class="section-title section-title--sm">Оцените качество перед покупкой</h3>
